@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Padre Games</title>
-  <meta name="description" content="Padre Games — retro-inspired indie games, updates, and releases." />
+  <title>padregames</title>
+  <meta name="description" content="padregames — committed to your entertainment." />
 
-  <!-- Retro pixel font (Google Fonts) -->
+  <!-- Retro pixel font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -22,14 +22,13 @@
       --border:#1f1f1f;
     }
 
-    /* Solid black background (no images, no gradients) */
     html, body { height: 100%; }
     body{
       margin:0;
       background: var(--bg);
       color: var(--fg);
       font-family: "Press Start 2P", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
       letter-spacing: 0.2px;
       overflow-x:hidden;
     }
@@ -53,14 +52,15 @@
       z-index:0;
     }
 
-    /* Light CRT glow/vignette */
+    /* Light CRT glow */
     body::after{
       content:"";
       position:fixed;
       inset:-20%;
       pointer-events:none;
-      background: radial-gradient(circle at 50% 25%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
-                  radial-gradient(circle at 50% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
+      background:
+        radial-gradient(circle at 35% 20%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 70% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
       z-index:0;
     }
 
@@ -69,103 +69,25 @@
       z-index:1;
       max-width: 980px;
       margin: 0 auto;
-      padding: 36px 18px 60px;
+      padding: 28px 18px 60px;
     }
 
+    /* Top-left brand only */
     .topbar{
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-start;
       align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
       margin-bottom: 18px;
     }
 
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .logo{
-      width: 44px;
-      height: 44px;
-      border: 2px solid var(--border);
-      background: #050505;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 0 0 2px rgba(0,0,0,1), 0 0 18px rgba(0,255,213,0.18);
-    }
-
-    .logo span{
-      color: var(--neon);
-      font-size: 14px;
-      text-shadow: 0 0 10px rgba(0,255,213,0.35);
-    }
-
-    .nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    a.navlink{
-      color: var(--fg);
-      text-decoration:none;
-      font-size: 11px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      background: #050505;
-    }
-
-    a.navlink:hover{
-      border-color: rgba(0,255,213,0.55);
-      box-shadow: 0 0 16px rgba(0,255,213,0.12);
-    }
-
-    .hero{
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #050505, #000000);
-      padding: 22px;
-      box-shadow: 0 0 0 2px rgba(0,0,0,1);
-    }
-
-    .title{
-      margin: 0 0 10px;
-      font-size: 22px;
+      font-size: 12px;
+      text-transform: lowercase;
       color: var(--fg);
       text-shadow: 0 0 12px rgba(0,255,213,0.18);
     }
 
-    .subtitle{
-      margin: 0;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .status{
-      margin-top: 14px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-size: 11px;
-      color: var(--fg);
-      border: 1px dashed rgba(0,255,213,0.45);
-      padding: 10px 12px;
-      background:#030303;
-    }
-
-    .dot{
-      width: 10px;
-      height: 10px;
-      background: var(--neon);
-      box-shadow: 0 0 14px rgba(0,255,213,0.6);
-      display:inline-block;
-    }
-
     .grid{
-      margin-top: 16px;
       display:grid;
       gap: 12px;
       grid-template-columns: repeat(12, 1fr);
@@ -176,59 +98,18 @@
       border: 1px solid var(--border);
       background: #040404;
       padding: 18px;
+      box-shadow: 0 0 0 2px rgba(0,0,0,1);
     }
 
-    .panel h2, .panel h3{
-      margin: 0 0 10px;
-      font-size: 12px;
-      color: var(--fg);
-    }
-
-    .panel p, .panel li{
+    .panel p{
       margin: 0;
       font-size: 11px;
       color: var(--muted);
     }
 
-    .panel ul{
-      margin: 10px 0 0;
-      padding-left: 18px;
-    }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-
-    a.btn{
-      display:inline-block;
-      text-decoration:none;
-      font-size: 11px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      background:#050505;
-      color: var(--fg);
-    }
-
-    a.btn.primary{
-      border-color: rgba(0,255,213,0.55);
-      box-shadow: 0 0 18px rgba(0,255,213,0.12);
-    }
-
-    a.btn.primary:hover{
-      box-shadow: 0 0 26px rgba(0,255,213,0.20);
-    }
-
-    a.btn.pink{
-      border-color: rgba(255,43,214,0.55);
-      box-shadow: 0 0 18px rgba(255,43,214,0.10);
-    }
-
+    /* Two boxes side-by-side on desktop */
     @media (min-width: 860px){
       .panel.half{ grid-column: span 6; }
-      .panel.third{ grid-column: span 4; }
     }
 
     footer{
@@ -238,83 +119,27 @@
       border-top: 1px solid var(--border);
       padding-top: 14px;
     }
-
-    .blink{
-      animation: blink 1.1s steps(2, jump-none) infinite;
-      color: var(--neon);
-    }
-    @keyframes blink { 50% { opacity: 0; } }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">
-        <div class="logo"><span>PG</span></div>
-        <div style="display:flex; flex-direction:column; gap:4px;">
-          <div style="font-size:12px;">PADRE GAMES</div>
-          <div style="font-size:10px; color: rgba(233,238,252,0.65);">retro-inspired indie studio</div>
-        </div>
-      </div>
-
-      <div class="nav">
-        <a class="navlink" href="#games">GAMES</a>
-        <a class="navlink" href="#updates">UPDATES</a>
-        <a class="navlink" href="#contact">CONTACT</a>
-      </div>
+      <div class="brand">padregames</div>
     </div>
 
-    <section class="hero">
-      <h1 class="title">INSERT COIN<span class="blink">_</span></h1>
-      <p class="subtitle">Welcome to Padre Games. New releases, dev logs, and announcements will live here.</p>
-
-      <div class="cta">
-        <a class="btn primary" href="#games">VIEW GAMES</a>
-        <a class="btn pink" href="#updates">READ UPDATES</a>
-      </div>
-
-      <div class="status">
-        <span class="dot"></span>
-        <span>SITE STATUS: ONLINE</span>
-      </div>
-    </section>
-
-    <div class="grid" id="games">
+    <div class="grid">
       <section class="panel half">
-        <h2>FEATURED GAME</h2>
-        <p>Coming soon. Replace this with your game title, short hook, and platform list.</p>
-        <ul>
-          <li>Platform: PC / Console (edit)</li>
-          <li>Genre: (edit)</li>
-          <li>Status: In development</li>
-        </ul>
+        <p>commited to your entertainment.</p>
       </section>
 
-      <section class="panel half" id="updates">
-        <h2>LATEST UPDATE</h2>
-        <p>Replace this with your newest dev log entry, patch notes, or announcement.</p>
-      </section>
-
-      <section class="panel third">
-        <h3>PRESS KIT</h3>
-        <p>Add a Google Drive/Dropbox link to logos + screenshots + trailer.</p>
-      </section>
-
-      <section class="panel third">
-        <h3>COMMUNITY</h3>
-        <p>Add your Discord / X / YouTube / TikTok links.</p>
-      </section>
-
-      <section class="panel third" id="contact">
-        <h3>CONTACT</h3>
-        <p>Email: <a href="mailto:hello@padregames.com" style="color:var(--neon); text-decoration:none;">hello@padregames.com</a></p>
-        <p style="margin-top:10px;">Business inquiries, press, partnerships.</p>
+      <section class="panel half">
+        <p>coming soon to an app store near you.</p>
       </section>
     </div>
 
     <footer>
-      © <span id="y"></span> Padre Games. All rights reserved.
+      © <span id="y"></span> padregames. All rights reserved.
     </footer>
   </div>
 
