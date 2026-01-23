@@ -47,7 +47,7 @@
           rgba(0,0,0,0) 2px,
           rgba(0,0,0,0) 6px
         );
-      opacity:0.18;
+      opacity:0.16;
       mix-blend-mode: screen;
       z-index:0;
     }
@@ -58,8 +58,9 @@
       position:fixed;
       inset:-20%;
       pointer-events:none;
-      background: radial-gradient(circle at 50% 25%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
-                  radial-gradient(circle at 50% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
+      background:
+        radial-gradient(circle at 50% 25%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 50% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
       z-index:0;
     }
 
@@ -68,27 +69,28 @@
       z-index:1;
       max-width: 980px;
       margin: 0 auto;
-      padding: 36px 18px 60px;
+      padding: 34px 18px 56px;
     }
 
     .topbar{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:16px;
+      gap:14px;
       flex-wrap:wrap;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
+      min-width: 240px;
     }
 
     .logo{
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border: 2px solid var(--border);
       background: #050505;
       display:flex;
@@ -101,6 +103,23 @@
       color: var(--neon);
       font-size: 14px;
       text-shadow: 0 0 10px rgba(0,255,213,0.35);
+    }
+
+    .brandText{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .brandName{
+      font-size:12px;
+      margin:0;
+    }
+
+    .brandTag{
+      font-size:10px;
+      color: rgba(233,238,252,0.65);
+      margin:0;
     }
 
     .nav{
@@ -116,6 +135,7 @@
       padding: 10px 12px;
       border: 1px solid var(--border);
       background: #050505;
+      transition: border-color .15s ease, box-shadow .15s ease;
     }
 
     a.navlink:hover{
@@ -141,10 +161,51 @@
       margin: 0;
       color: var(--muted);
       font-size: 11px;
+      max-width: 70ch;
+    }
+
+    .heroRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    a.btn{
+      display:inline-block;
+      text-decoration:none;
+      font-size: 11px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background:#050505;
+      color: var(--fg);
+      cursor:pointer;
+      transition: border-color .15s ease, box-shadow .15s ease, transform .05s ease;
+    }
+    a.btn:active{ transform: translateY(1px); }
+
+    a.btn.primary{
+      border-color: rgba(0,255,213,0.55);
+      box-shadow: 0 0 18px rgba(0,255,213,0.10);
+    }
+    a.btn.primary:hover{
+      box-shadow: 0 0 26px rgba(0,255,213,0.18);
+    }
+
+    a.btn.pink{
+      border-color: rgba(255,43,214,0.55);
+      box-shadow: 0 0 18px rgba(255,43,214,0.10);
     }
 
     .status{
-      margin-top: 14px;
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -153,6 +214,7 @@
       border: 1px dashed rgba(0,255,213,0.45);
       padding: 10px 12px;
       background:#030303;
+      white-space: nowrap;
     }
 
     .dot{
@@ -164,7 +226,7 @@
     }
 
     .grid{
-      margin-top: 16px;
+      margin-top: 14px;
       display:grid;
       gap: 12px;
       grid-template-columns: repeat(12, 1fr);
@@ -192,38 +254,6 @@
     .panel ul{
       margin: 10px 0 0;
       padding-left: 18px;
-    }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-
-    a.btn{
-      display:inline-block;
-      text-decoration:none;
-      font-size: 11px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      background:#050505;
-      color: var(--fg);
-      cursor:pointer;
-    }
-
-    a.btn.primary{
-      border-color: rgba(0,255,213,0.55);
-      box-shadow: 0 0 18px rgba(0,255,213,0.12);
-    }
-
-    a.btn.primary:hover{
-      box-shadow: 0 0 26px rgba(0,255,213,0.20);
-    }
-
-    a.btn.pink{
-      border-color: rgba(255,43,214,0.55);
-      box-shadow: 0 0 18px rgba(255,43,214,0.10);
     }
 
     @media (min-width: 860px){
@@ -345,9 +375,9 @@
     <div class="topbar">
       <div class="brand">
         <div class="logo"><span>PG</span></div>
-        <div style="display:flex; flex-direction:column; gap:4px;">
-          <div style="font-size:12px;">PADRE GAMES</div>
-          <div style="font-size:10px; color: rgba(233,238,252,0.65);">retro-inspired indie studio</div>
+        <div class="brandText">
+          <p class="brandName">PADRE GAMES</p>
+          <p class="brandTag">retro-inspired indie studio</p>
         </div>
       </div>
 
@@ -362,14 +392,16 @@
       <h1 class="title">INSERT COIN<span class="blink">_</span></h1>
       <p class="subtitle">Welcome to Padre Games. New releases, dev logs, and announcements will live here.</p>
 
-      <div class="cta">
-        <a class="btn primary" href="games.html">VIEW GAMES</a>
-        <a class="btn pink" href="updates.html">READ UPDATES</a>
-      </div>
+      <div class="heroRow">
+        <div class="cta">
+          <a class="btn primary" href="games.html">VIEW GAMES</a>
+          <a class="btn pink" href="updates.html">READ UPDATES</a>
+        </div>
 
-      <div class="status">
-        <span class="dot"></span>
-        <span>SITE STATUS: ONLINE</span>
+        <div class="status">
+          <span class="dot"></span>
+          <span>SITE STATUS: ONLINE</span>
+        </div>
       </div>
     </section>
 
@@ -378,7 +410,7 @@
         <h2>FEATURED GAME</h2>
         <p>Coming soon. JJK RPG</p>
         <ul>
-          <li>Platform: iOS / Android (edit)</li>
+          <li>Platform: iOS / Android</li>
           <li>Genre: RPG</li>
           <li>Status: In development</li>
         </ul>
