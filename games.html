@@ -127,6 +127,7 @@
       border: 1px solid var(--border);
       background: #040404;
       padding: 18px;
+      box-shadow: 0 0 0 2px rgba(0,0,0,1);
     }
 
     .panel h1{
@@ -240,8 +241,8 @@
       <div class="nav">
         <a class="navlink" href="index.html">HOME</a>
         <a class="navlink" href="games.html">GAMES</a>
-        <a class="navlink" href="index.html#updates">UPDATES</a>
-        <a class="navlink" href="index.html#contact">CONTACT</a>
+        <a class="navlink" href="updates.html">UPDATES</a>
+        <a class="navlink" href="mailto:padregames.us@gmail.com">CONTACT</a>
       </div>
     </div>
 
@@ -269,3 +270,28 @@
 
         <div class="placeholderShot">SCREENSHOT / TRAILER PLACEHOLDER</div>
       </div>
+
+      <div class="card half">
+        <h2>NEXT TITLE</h2>
+        <p class="muted">Reserved slot for your next project.</p>
+
+        <div class="tagRow">
+          <div class="tag">TBD</div>
+          <div class="tag">TBD</div>
+          <div class="tag">TBD</div>
+        </div>
+
+        <div class="placeholderShot">PLACEHOLDER</div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Padre Games. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
