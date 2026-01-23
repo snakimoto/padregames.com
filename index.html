@@ -361,8 +361,8 @@
       <p class="subtitle">Welcome to Padre Games. New releases, dev logs, and announcements will live here.</p>
 
       <div class="cta">
-        <a class="btn primary" href="#games">VIEW GAMES</a>
-       <a class="btn pink" href="updates.html">READ UPDATES</a>
+        <a class="btn primary" href="games.html">VIEW GAMES</a>
+        <a class="btn pink" href="updates.html">READ UPDATES</a>
       </div>
 
       <div class="status">
@@ -371,7 +371,7 @@
       </div>
     </section>
 
-    <div class="grid" id="games">
+    <div class="grid">
       <section class="panel half">
         <h2>FEATURED GAME</h2>
         <p>Coming soon. JJK RPG</p>
@@ -382,7 +382,7 @@
         </ul>
       </section>
 
-      <section class="panel half" id="updates">
+      <section class="panel half">
         <h2>LATEST UPDATE</h2>
         <p>Nothing yet</p>
       </section>
@@ -458,7 +458,6 @@
     const openModal = (id) => document.getElementById(id)?.classList.add("show");
     const closeModal = (id) => document.getElementById(id)?.classList.remove("show");
 
-    // Buttons
     document.getElementById("openDonate")?.addEventListener("click", (e) => {
       e.preventDefault();
       openModal("donateModal");
@@ -469,12 +468,10 @@
       openModal("privacyModal");
     });
 
-    // Close buttons
     document.querySelectorAll("[data-close]").forEach((btn) => {
       btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close")));
     });
 
-    // Click outside modal to close
     ["donateModal", "privacyModal"].forEach((id) => {
       const overlay = document.getElementById(id);
       overlay?.addEventListener("click", (e) => {
@@ -482,7 +479,6 @@
       });
     });
 
-    // ESC to close
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeModal("donateModal");
@@ -490,14 +486,12 @@
       }
     });
 
-    // Tap/click to copy + toast
     const toast = document.getElementById("copied");
     let toastTimer = null;
 
     document.querySelectorAll(".addrBlock").forEach((block) => {
       block.addEventListener("click", async () => {
         const value = block.getAttribute("data-copy") || block.textContent.trim();
-
         try { await navigator.clipboard.writeText(value); } catch (e) {}
 
         if (toast) {
