@@ -70,4 +70,131 @@
     }
 
     .topbar{
-      display:
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color: var(--fg);
+    }
+
+    .logo{
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--border);
+      background: #050505;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 0 0 2px rgba(0,0,0,1), 0 0 18px rgba(0,255,213,0.18);
+    }
+
+    .logo span{
+      color: var(--neon);
+      font-size: 14px;
+      text-shadow: 0 0 10px rgba(0,255,213,0.35);
+    }
+
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    a.navlink{
+      color: var(--fg);
+      text-decoration:none;
+      font-size: 11px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: #050505;
+    }
+
+    a.navlink:hover{
+      border-color: rgba(0,255,213,0.55);
+      box-shadow: 0 0 16px rgba(0,255,213,0.12);
+    }
+
+    .panel{
+      border: 1px solid var(--border);
+      background: #040404;
+      padding: 18px;
+      box-shadow: 0 0 0 2px rgba(0,0,0,1);
+    }
+
+    .panel h1{
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--fg);
+      text-shadow: 0 0 12px rgba(0,255,213,0.18);
+    }
+
+    .muted{
+      color: var(--muted);
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .empty{
+      margin-top: 12px;
+      border: 1px dashed rgba(0,255,213,0.45);
+      background:#030303;
+      padding: 14px 16px;
+      color: rgba(233,238,252,0.8);
+      font-size: 11px;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: rgba(233,238,252,0.65);
+      font-size: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="index.html" title="Home">
+        <div class="logo"><span>PG</span></div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <div style="font-size:12px;">PADRE GAMES</div>
+          <div style="font-size:10px; color: rgba(233,238,252,0.65);">updates</div>
+        </div>
+      </a>
+
+      <div class="nav">
+        <a class="navlink" href="index.html">HOME</a>
+        <a class="navlink" href="games.html">GAMES</a>
+        <a class="navlink" href="updates.html">UPDATES</a>
+        <a class="navlink" href="index.html#contact">CONTACT</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1>UPDATES</h1>
+      <p class="muted">Announcements, patch notes, and dev logs.</p>
+
+      <div class="empty">Nothing here yet.</div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Padre Games. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
