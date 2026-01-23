@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padre Games — Updates</title>
+  <meta name="description" content="Padre Games updates and announcements." />
+
+  <!-- Retro pixel font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000000;
+      --fg:#e6f7ff;
+      --muted:#9ad7ff;
+      --neon:#00ffd5;
+      --neon2:#ff2bd6;
+      --border:#1f1f1f;
+    }
+
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Press Start 2P", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.03),
+          rgba(255,255,255,0.03) 1px,
+          rgba(0,0,0,0) 2px,
+          rgba(0,0,0,0) 6px
+        );
+      opacity:0.18;
+      mix-blend-mode: screen;
+      z-index:0;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 50% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
+      z-index:0;
+    }
+
+    .wrap{
+      position:relative;
+      z-index:1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 18px 60px;
+    }
+
+    .topbar{
+      display:
