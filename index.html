@@ -286,7 +286,7 @@
         <p>Coming soon. JJK RPG</p>
         <ul>
           <li>Platform: iOS / Android (edit)</li>
-          <li>Genre: RPG </li>
+          <li>Genre: RPG</li>
           <li>Status: In development</li>
         </ul>
       </section>
@@ -298,7 +298,25 @@
 
       <section class="panel third">
         <h3>DONATE</h3>
-        <p>BTC: bc1q9452eamksd20mhk5ux26tzlcuk40ss7nvu4uv6</p>
+        <p style="margin-bottom:10px;">BTC:</p>
+
+        <!-- Tap/Click to copy BTC address -->
+        <div
+          id="btc"
+          title="Click to copy"
+          style="
+            font-size: 10px;
+            color: var(--fg);
+            border: 1px dashed rgba(0,255,213,0.45);
+            background:#030303;
+            padding: 10px 12px;
+            word-break: break-all;
+            cursor: pointer;
+            user-select: all;
+          "
+        >bc1q9452eamksd20mhk5ux26tzlcuk40ss7nvu4uv6</div>
+
+        <p style="margin-top:10px; font-size:10px; color: rgba(233,238,252,0.65);">Tap the address to copy.</p>
       </section>
 
       <section class="panel third">
@@ -320,6 +338,20 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    const el = document.getElementById("btc");
+    if (el) {
+      el.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(el.textContent.trim());
+          el.style.borderColor = "rgba(0,255,213,0.75)";
+        } catch (e) {
+          // If clipboard is blocked, selection still works via user-select: all
+        }
+      });
+    }
   </script>
 </body>
 </html>
