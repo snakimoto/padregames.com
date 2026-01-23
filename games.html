@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padre Games — Games</title>
+  <meta name="description" content="Padre Games games and releases." />
+
+  <!-- Retro pixel font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000000;
+      --fg:#e6f7ff;
+      --muted:#9ad7ff;
+      --neon:#00ffd5;
+      --neon2:#ff2bd6;
+      --border:#1f1f1f;
+    }
+
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Press Start 2P", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.03),
+          rgba(255,255,255,0.03) 1px,
+          rgba(0,0,0,0) 2px,
+          rgba(0,0,0,0) 6px
+        );
+      opacity:0.18;
+      mix-blend-mode: screen;
+      z-index:0;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(0,255,213,0.10), rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 50% 85%, rgba(255,43,214,0.08), rgba(0,0,0,0) 55%);
+      z-index:0;
+    }
+
+    .wrap{
+      position:relative;
+      z-index:1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 18px 60px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color: var(--fg);
+    }
+
+    .logo{
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--border);
+      background: #050505;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 0 0 2px rgba(0,0,0,1), 0 0 18px rgba(0,255,213,0.18);
+    }
+
+    .logo span{
+      color: var(--neon);
+      font-size: 14px;
+      text-shadow: 0 0 10px rgba(0,255,213,0.35);
+    }
+
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    a.navlink{
+      color: var(--fg);
+      text-decoration:none;
+      font-size: 11px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: #050505;
+    }
+
+    a.navlink:hover{
+      border-color: rgba(0,255,213,0.55);
+      box-shadow: 0 0 16px rgba(0,255,213,0.12);
+    }
+
+    .panel{
+      border: 1px solid var(--border);
+      background: #040404;
+      padding: 18px;
+    }
+
+    .panel h1{
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--fg);
+      text-shadow: 0 0 12px rgba(0,255,213,0.18);
+    }
+
+    .panel h2{
+      margin: 0 0 10px;
+      font-size: 12px;
+      color: var(--fg);
+    }
+
+    .muted{
+      color: var(--muted);
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .grid{
+      margin-top: 12px;
+      display:grid;
+      gap: 12px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .card{
+      grid-column: span 12;
+      border: 1px solid var(--border);
+      background: #040404;
+      padding: 18px;
+    }
+
+    @media (min-width: 860px){
+      .card.half{ grid-column: span 6; }
+    }
+
+    .tagRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .tag{
+      font-size: 10px;
+      color: rgba(233,238,252,0.75);
+      border: 1px dashed rgba(0,255,213,0.45);
+      padding: 8px 10px;
+      background:#030303;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    a.btn{
+      display:inline-block;
+      text-decoration:none;
+      font-size: 11px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background:#050505;
+      color: var(--fg);
+    }
+
+    a.btn.primary{
+      border-color: rgba(0,255,213,0.55);
+      box-shadow: 0 0 18px rgba(0,255,213,0.12);
+    }
+
+    footer{
+      margin-top: 18px;
+      color: rgba(233,238,252,0.65);
+      font-size: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .placeholderShot{
+      width:100%;
+      aspect-ratio: 16 / 9;
+      border: 1px dashed rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, #050505, #000000);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(233,238,252,0.6);
+      font-size: 10px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="index.html" title="Home">
+        <div class="logo"><span>PG</span></div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <div style="font-size:12px;">PADRE GAMES</div>
+          <div style="font-size:10px; color: rgba(233,238,252,0.65);">games</div>
+        </div>
+      </a>
+
+      <div class="nav">
+        <a class="navlink" href="index.html">HOME</a>
+        <a class="navlink" href="games.html">GAMES</a>
+        <a class="navlink" href="index.html#updates">UPDATES</a>
+        <a class="navlink" href="index.html#contact">CONTACT</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1>GAMES</h1>
+      <p class="muted">Featured titles and upcoming releases from Padre Games.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card half">
+        <h2>JJK RPG</h2>
+        <p class="muted">Coming soon. Mobile RPG in development.</p>
+
+        <div class="tagRow">
+          <div class="tag">iOS</div>
+          <div class="tag">Android</div>
+          <div class="tag">RPG</div>
+          <div class="tag">In Development</div>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#" onclick="alert('Wishlist link coming soon.'); return false;">WISHLIST (SOON)</a>
+          <a class="btn" href="#" onclick="alert('Trailer coming soon.'); return false;">TRAILER (SOON)</a>
+        </div>
+
+        <div class="placeholderShot">SCREENSHOT / TRAILER PLACEHOLDER</div>
+      </div>
