@@ -17,10 +17,10 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top left, rgba(0, 255, 204, 0.08), transparent 32%),
-        linear-gradient(180deg, #06110f 0%, #070909 45%, #050505 100%);
-      color: #f4f7f6;
-      font-family: "Courier New", monospace;
+        radial-gradient(circle at top left, rgba(70, 145, 255, 0.18), transparent 34%),
+        linear-gradient(180deg, #07111f 0%, #080b12 45%, #05070b 100%);
+      color: #f5f8ff;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
 
@@ -30,7 +30,7 @@
     }
 
     .page {
-      width: min(1100px, calc(100% - 32px));
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
       padding: 28px 0;
     }
@@ -51,27 +51,29 @@
     }
 
     .logo {
-      width: 52px;
-      height: 52px;
+      width: 50px;
+      height: 50px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(0, 255, 204, 0.7);
-      background: rgba(0, 0, 0, 0.45);
-      color: #00ffcc;
-      font-weight: 900;
-      font-size: 20px;
-      box-shadow: 0 0 18px rgba(0, 255, 204, 0.12);
+      border-radius: 16px;
+      border: 1px solid rgba(95, 165, 255, 0.65);
+      background: linear-gradient(145deg, rgba(70, 145, 255, 0.22), rgba(255, 255, 255, 0.04));
+      color: #8fc5ff;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 0 24px rgba(70, 145, 255, 0.18);
     }
 
     .brand h1 {
       margin: 0;
       font-size: 22px;
-      letter-spacing: 2px;
+      letter-spacing: 0.5px;
+      font-weight: 800;
     }
 
     .brand p {
       margin: 2px 0 0;
-      color: #9fb8b4;
+      color: #9fb2cf;
       font-size: 13px;
     }
 
@@ -85,153 +87,174 @@
     nav a,
     button {
       font-family: inherit;
-      font-weight: 800;
-      letter-spacing: 1px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     nav a {
       padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(0, 0, 0, 0.35);
-      color: #f4f7f6;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: #eef5ff;
       transition: 0.2s ease;
+      font-size: 14px;
     }
 
     nav a:hover {
-      border-color: #00ffcc;
-      color: #00ffcc;
+      border-color: rgba(125, 185, 255, 0.85);
+      background: rgba(70, 145, 255, 0.12);
+      color: #9dccff;
       transform: translateY(-1px);
     }
 
     .hero {
       margin-top: 28px;
-      padding: 52px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 58px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
       background:
-        linear-gradient(135deg, rgba(0, 255, 204, 0.08), rgba(255, 255, 255, 0.02)),
-        rgba(0, 0, 0, 0.36);
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+        linear-gradient(135deg, rgba(70, 145, 255, 0.18), rgba(255, 255, 255, 0.035)),
+        rgba(5, 9, 16, 0.78);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      overflow: hidden;
     }
 
     .eyebrow {
-      color: #00ffcc;
+      color: #8fc5ff;
       font-size: 14px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
 
     .hero h2 {
       margin: 0;
-      font-size: clamp(34px, 7vw, 72px);
-      line-height: 0.95;
-      letter-spacing: 2px;
+      max-width: 850px;
+      font-size: clamp(38px, 7vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -2.8px;
+      font-weight: 850;
     }
 
     .hero p {
       max-width: 720px;
-      color: #b9ccca;
-      font-size: 18px;
-      margin: 22px 0 0;
+      color: #b8c7dd;
+      font-size: 19px;
+      margin: 24px 0 0;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 13px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(0, 0, 0, 0.42);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.055);
       color: #ffffff;
-      font-weight: 900;
+      font-weight: 750;
       transition: 0.2s ease;
       cursor: pointer;
     }
 
     .btn.primary {
-      border-color: #00ffcc;
-      color: #00110e;
-      background: #00ffcc;
+      border-color: rgba(125, 185, 255, 0.85);
+      color: #06101f;
+      background: linear-gradient(180deg, #a9d2ff, #5fa5ff);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      filter: brightness(1.1);
+      filter: brightness(1.08);
     }
 
     section {
       margin-top: 26px;
-      padding: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(0, 0, 0, 0.38);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(7, 12, 22, 0.72);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
     }
 
     section h2 {
       margin: 0 0 8px;
-      font-size: 28px;
-      letter-spacing: 1px;
+      font-size: 30px;
+      letter-spacing: -0.8px;
+      font-weight: 820;
     }
 
     .section-subtitle {
       margin: 0 0 22px;
-      color: #9fb8b4;
+      color: #9fb2cf;
     }
 
-    .grid {
+    .game-card {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background:
+        linear-gradient(135deg, rgba(70, 145, 255, 0.12), transparent),
+        rgba(3, 7, 14, 0.72);
     }
 
-    .card {
-      padding: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(5, 8, 8, 0.78);
-      min-height: 260px;
+    .game-card h3 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: -2px;
+      font-weight: 850;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      letter-spacing: 1px;
-    }
-
-    .card p {
-      color: #b9ccca;
-      margin: 0 0 16px;
+    .game-card p {
+      color: #b8c7dd;
+      margin: 0 0 18px;
+      font-size: 17px;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 18px 0;
+      margin: 22px 0;
     }
 
     .tag {
-      padding: 7px 10px;
-      color: #8eeedb;
-      border: 1px solid rgba(0, 255, 204, 0.35);
-      background: rgba(0, 255, 204, 0.04);
+      padding: 8px 11px;
+      color: #b7dcff;
+      border-radius: 999px;
+      border: 1px solid rgba(125, 185, 255, 0.26);
+      background: rgba(70, 145, 255, 0.08);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .placeholder {
-      height: 160px;
+      min-height: 280px;
       display: grid;
       place-items: center;
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      color: #748581;
-      margin-top: 16px;
+      border-radius: 20px;
+      border: 1px dashed rgba(150, 190, 235, 0.22);
+      color: #7d8fa8;
       text-align: center;
-      padding: 20px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at center, rgba(70, 145, 255, 0.14), transparent 45%),
+        rgba(255, 255, 255, 0.025);
     }
 
     .updates-list {
@@ -241,16 +264,24 @@
 
     .update-item {
       padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.025);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.035);
+      color: #b8c7dd;
     }
 
     .update-item strong {
-      color: #00ffcc;
+      color: #9dccff;
     }
 
     .contact-box {
-      color: #b9ccca;
+      color: #b8c7dd;
+    }
+
+    .contact-box a {
+      color: #9dccff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     footer {
@@ -259,10 +290,11 @@
       align-items: center;
       gap: 18px;
       margin-top: 26px;
-      padding: 22px 0 10px;
+      padding: 24px 0 10px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #9fb8b4;
+      color: #9fb2cf;
       flex-wrap: wrap;
+      font-size: 14px;
     }
 
     .footer-buttons {
@@ -273,18 +305,21 @@
 
     .footer-buttons button,
     .close-btn {
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(255, 255, 255, 0.05);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 11px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 11px 16px;
       cursor: pointer;
       transition: 0.2s ease;
+      font-weight: 750;
     }
 
     .footer-buttons button:hover,
     .close-btn:hover {
-      border-color: #00ffcc;
-      color: #00ffcc;
+      border-color: rgba(125, 185, 255, 0.85);
+      background: rgba(70, 145, 255, 0.12);
+      color: #9dccff;
     }
 
     .modal {
@@ -292,7 +327,8 @@
       position: fixed;
       z-index: 999;
       inset: 0;
-      background: rgba(0, 0, 0, 0.82);
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(10px);
       justify-content: center;
       align-items: center;
       padding: 20px;
@@ -302,46 +338,49 @@
       width: min(680px, 100%);
       max-height: 88vh;
       overflow-y: auto;
-      background: #080b0b;
+      background: #08101d;
       color: white;
-      border: 1px solid rgba(0, 255, 204, 0.32);
+      border-radius: 24px;
+      border: 1px solid rgba(125, 185, 255, 0.26);
       padding: 28px;
-      box-shadow: 0 0 40px rgba(0, 255, 204, 0.12);
+      box-shadow: 0 0 50px rgba(70, 145, 255, 0.18);
     }
 
     .modal-content h2 {
       margin: 0 0 16px;
-      letter-spacing: 2px;
+      letter-spacing: -0.8px;
+      font-size: 30px;
     }
 
     .modal-content p {
-      color: #b9ccca;
+      color: #b8c7dd;
       margin: 22px 0 8px;
     }
 
     .wallet {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 12px;
+      padding: 13px;
       word-break: break-all;
       cursor: pointer;
-      color: #00ffcc;
+      color: #9dccff;
+      font-size: 14px;
     }
 
     .wallet:hover {
-      border-color: #00ffcc;
-      background: rgba(0, 255, 204, 0.06);
+      border-color: rgba(125, 185, 255, 0.85);
+      background: rgba(70, 145, 255, 0.1);
     }
 
     #copiedText {
       display: none;
       margin-top: 18px;
-      color: #00ffcc;
-      font-weight: 900;
-      letter-spacing: 1px;
+      color: #9dccff;
+      font-weight: 800;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       header {
         align-items: flex-start;
         flex-direction: column;
@@ -349,6 +388,7 @@
 
       nav {
         justify-content: flex-start;
+        width: 100%;
       }
 
       nav a {
@@ -357,15 +397,20 @@
       }
 
       .hero {
-        padding: 34px 24px;
+        padding: 38px 24px;
       }
 
       section {
         padding: 22px;
       }
 
-      .grid {
+      .game-card {
         grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .placeholder {
+        min-height: 220px;
       }
 
       footer {
@@ -390,82 +435,69 @@
       <a class="brand" href="#home">
         <div class="logo">PG</div>
         <div>
-          <h1>PADRE GAMES</h1>
+          <h1>Padre Games</h1>
           <p>indie games • mobile-first • built with style</p>
         </div>
       </a>
 
       <nav>
-        <a href="#home">HOME</a>
-        <a href="#games">GAMES</a>
-        <a href="#updates">UPDATES</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#updates">Updates</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="home">
       <section class="hero">
-        <div class="eyebrow">Insert Coin</div>
-        <h2>Small studio.<br />Big game energy.</h2>
+        <div class="eyebrow">Padre Games</div>
+        <h2>Simple games with personality.</h2>
         <p>
-          Padre Games is an independent game studio focused on simple, addictive, and personality-driven games.
-          We are building fun experiences with a retro soul and modern mobile feel.
+          Padre Games is an independent game studio creating clean, fun, and addictive mobile-first games.
+          Our first featured title is Ice Cream Jam.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#games">VIEW GAMES</a>
-          <a class="btn" href="#updates">SEE UPDATES</a>
+          <a class="btn primary" href="#games">View Current Game</a>
+          <a class="btn" href="#updates">See Updates</a>
         </div>
       </section>
 
       <section id="games">
-        <h2>GAMES</h2>
-        <p class="section-subtitle">Featured titles and projects in development.</p>
+        <h2>Current Game</h2>
+        <p class="section-subtitle">The first featured project from Padre Games.</p>
 
-        <div class="grid">
-          <div class="card">
-            <h3>ICE CREAM JAM</h3>
+        <div class="game-card">
+          <div>
+            <h3>Ice Cream Jam</h3>
             <p>
-              A mobile clicker game where players tap, upgrade, unlock flavors, and build their ice cream empire.
+              Ice Cream Jam is a mobile clicker game where players tap, upgrade, unlock flavors,
+              and grow their ice cream empire.
+            </p>
+
+            <p>
+              Built for quick sessions, satisfying progression, and a fun casual experience.
             </p>
 
             <div class="tags">
               <span class="tag">Mobile</span>
               <span class="tag">Clicker</span>
               <span class="tag">Offline</span>
+              <span class="tag">Casual</span>
               <span class="tag">In Development</span>
             </div>
 
-            <a class="btn primary" href="#updates">COMING SOON</a>
-
-            <div class="placeholder">
-              Screenshot / trailer placeholder
-            </div>
+            <a class="btn primary" href="#updates">Coming Soon</a>
           </div>
 
-          <div class="card">
-            <h3>NEXT TITLE</h3>
-            <p>
-              Reserved slot for a future Padre Games release.
-            </p>
-
-            <div class="tags">
-              <span class="tag">TBD</span>
-              <span class="tag">TBD</span>
-              <span class="tag">TBD</span>
-            </div>
-
-            <a class="btn" href="#contact">STAY TUNED</a>
-
-            <div class="placeholder">
-              More games coming later
-            </div>
+          <div class="placeholder">
+            Ice Cream Jam screenshot / trailer coming soon
           </div>
         </div>
       </section>
 
       <section id="updates">
-        <h2>UPDATES</h2>
+        <h2>Updates</h2>
         <p class="section-subtitle">Development notes and announcements.</p>
 
         <div class="updates-list">
@@ -478,17 +510,17 @@
           </div>
 
           <div class="update-item">
-            <strong>Coming soon:</strong> Screenshots, trailers, release info, and dev updates.
+            <strong>Coming soon:</strong> Screenshots, trailers, release info, and development updates.
           </div>
         </div>
       </section>
 
       <section id="contact">
-        <h2>CONTACT</h2>
+        <h2>Contact</h2>
         <p class="section-subtitle">Business, support, and general inquiries.</p>
 
         <div class="contact-box">
-          <p>Email: contact@padregames.com</p>
+          <p>Email: <a href="mailto:padregames.us@gmail.com">padregames.us@gmail.com</a></p>
           <p>More contact options coming soon.</p>
         </div>
       </section>
@@ -498,42 +530,42 @@
       <div>© 2026 Padre Games. All rights reserved.</div>
 
       <div class="footer-buttons">
-        <button onclick="openDonate()">DONATE</button>
-        <button onclick="openPrivacy()">PRIVACY POLICY</button>
+        <button onclick="openDonate()">Donate</button>
+        <button onclick="openPrivacy()">Privacy Policy</button>
       </div>
     </footer>
   </div>
 
   <div id="donateModal" class="modal">
     <div class="modal-content">
-      <h2>DONATE</h2>
+      <h2>Donate</h2>
 
-      <button class="close-btn" onclick="closeDonate()">CLOSE</button>
+      <button class="close-btn" onclick="closeDonate()">Close</button>
 
-      <p>BTC (tap to copy):</p>
+      <p>BTC — tap to copy:</p>
       <div class="wallet" onclick="copyWallet('bc1q9452eamksd20mhk5ux26tzlcuk40ss7nvu4uv6')">
         bc1q9452eamksd20mhk5ux26tzlcuk40ss7nvu4uv6
       </div>
 
-      <p>SOL (tap to copy):</p>
+      <p>SOL — tap to copy:</p>
       <div class="wallet" onclick="copyWallet('99kiQS2jHAArjdADeDhWebmqFHRAPN1iEBMQWGGwFFvX')">
         99kiQS2jHAArjdADeDhWebmqFHRAPN1iEBMQWGGwFFvX
       </div>
 
-      <p>ETH (tap to copy):</p>
+      <p>ETH — tap to copy:</p>
       <div class="wallet" onclick="copyWallet('0x5790254EE1CA100CE43E744DC44067eb81d3C07A')">
         0x5790254EE1CA100CE43E744DC44067eb81d3C07A
       </div>
 
-      <div id="copiedText">COPIED!</div>
+      <div id="copiedText">Copied!</div>
     </div>
   </div>
 
   <div id="privacyModal" class="modal">
     <div class="modal-content">
-      <h2>PRIVACY POLICY</h2>
+      <h2>Privacy Policy</h2>
 
-      <button class="close-btn" onclick="closePrivacy()">CLOSE</button>
+      <button class="close-btn" onclick="closePrivacy()">Close</button>
 
       <p>
         Padre Games respects your privacy. This website does not currently collect personal information,
